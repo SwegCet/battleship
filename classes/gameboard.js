@@ -1,6 +1,6 @@
 import Ship from "./ship.js";
 
-class Gameboard {
+export default class Gameboard {
   constructor(size = 10) {
     this.size = size;
     //Initializes and fills 2D array
@@ -39,7 +39,7 @@ class Gameboard {
     const cells = this.cellsFor(row, column, length, orientation);
     ship.occupy(cells);
     for (const [r, c] of cells) this.grid[r][c] = { type: "ship", ship };
-    this.ships.push(ship);
+    this.ship.push(ship);
     return ship;
   }
 
